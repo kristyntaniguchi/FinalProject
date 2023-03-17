@@ -1,0 +1,32 @@
+﻿@*
+    Superhero Index
+*@
+@model IEnumerable<Superhero>
+
+
+<table class="table table-hover">
+    
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.RegistrationId)</th>
+            <th scope="col"></th>
+            <th scope="col">@Html.DisplayNameFor(model => model.SuperheroName)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>Location</th>
+        </tr>
+
+
+  
+        @foreach(Superhero s in Model)
+        {
+            <tr>
+                <td>@s.RegistrationId</td>
+                <td>@s.Photo</td>
+                <td>@s.SuperheroName</td>
+                <td>@s.FirstName</td>
+                <td>@s.LastName</td>
+                <td>@s.City, @s.State</td>
+            </tr>
+        }
+  
+</table>
